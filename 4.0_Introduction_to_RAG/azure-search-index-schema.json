@@ -1,0 +1,42 @@
+{
+  "name": "pdf-content-index",
+  "fields": [
+    {
+      "name": "id",
+      "type": "Edm.String",
+      "key": true,
+      "searchable": false
+    },
+    {
+      "name": "content",
+      "type": "Edm.String",
+      "searchable": true,
+      "filterable": false,
+      "sortable": false,
+      "facetable": false
+    },
+    {
+      "name": "pageNumber",
+      "type": "Edm.Int32",
+      "searchable": false,
+      "filterable": true,
+      "sortable": true,
+      "facetable": true
+    },
+    {
+      "name": "vectorContent",
+      "type": "Collection(Edm.Single)",
+      "searchable": true,
+      "vectorSearchDimensions": 1536,
+      "vectorSearchConfiguration": "default"
+    }
+  ],
+  "vectorSearch": {
+    "algorithmConfigurations": [
+      {
+        "name": "default",
+        "kind": "hnsw"
+      }
+    ]
+  }
+}
